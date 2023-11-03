@@ -30,12 +30,9 @@ export const Phonebook = () => {
     setContacts(prevState => [...prevState, newContact]);
   };
 
-  const deleteContact = contId => {
-    console.log(contId);
-    setContacts(prevState => {
-      console.log(prevState);
-      prevState.filter(contact => contact.id !== contId);
-    });
+  const deleteContact = id => {
+    const filteredContacts = contacts.filter(contact => contact.id !== id);
+    setContacts(filteredContacts);
   };
 
   const filterHandle = value => {
